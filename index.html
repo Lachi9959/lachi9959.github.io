@@ -908,6 +908,38 @@
     contactForm.classList.remove('hidden');
   });
 </script>
+  <script>
+document.addEventListener("keydown", function (e) {
+
+    // Ctrl + U
+    if (e.ctrlKey && e.key.toLowerCase() === "u") {
+        e.preventDefault();
+    }
+
+    // Ctrl + S
+    if (e.ctrlKey && e.key.toLowerCase() === "s") {
+        e.preventDefault();
+    }
+
+    // Ctrl + Shift + I / F12 (Developer Tools)
+    if (
+        e.key === "F12" ||
+        (e.ctrlKey && e.shiftKey && e.key.toLowerCase() === "i")
+    ) {
+        e.preventDefault();
+    }
+});
+
+/* Disable double-click */
+document.addEventListener("dblclick", function (e) {
+    e.preventDefault();
+});
+
+/* Disable right-click */
+document.addEventListener("contextmenu", function (e) {
+    e.preventDefault();
+});
+</script>
 
 </body>
 </html>
